@@ -19,7 +19,7 @@ public class Planet extends EntityBean {
 	@Column(name = "planet_size")
 	private int size;
 
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "star_fk_planet")
 	private Star star;
 
