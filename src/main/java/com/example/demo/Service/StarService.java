@@ -73,14 +73,34 @@ public class StarService {
 		}
 		
 	}
+	
 	//update
 	@Transactional
-	public StarDTO update(StarDTO starDTO, int id) {
-		return null;
+	public StarDTO update(StarDTO starDTO, int id) throws Exception {
+		Optional<Star> starOptional = starRepository.findById(id);
+		ModelMapper modelMapper = new ModelMapper();
+		try {
+			Star star = starOptional.get();
+			star = modelMapper.map(starDTO, Star.class);
+			starRepository.save(star);
+			starDTO = modelMapper.map(star, StarDTO.class);
+		} catch (Exception e) {
+			throw new Exception();
+		}
+		return starDTO;
 	}
+	
 	//delete
 	@Transactional
-	public boolean delete(int id) {
-		return true;
+	public boolean delete(int id) throws Exception{
+		Optional<Star> starOptional = starRepository.findById(id);
+		try {
+			starRepository.delete(starOptional.get());
+			return true;
+		} catch (Exception e) {
+			throw new Exception();
+			
+		}
+		
 	}
 }
