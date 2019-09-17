@@ -20,7 +20,7 @@ import com.example.demo.Service.PlanetService;
 
 @Controller
 @RestController
-@RequestMapping(path = "api/v1/Planets")
+@RequestMapping(path = "api/v1/planets")
 public class PlanetController {
 
 	//Inyección de dependencia
@@ -67,7 +67,7 @@ public class PlanetController {
 		}
 	}
 	//put
-	@PutMapping("{id}")
+	@PutMapping("/{id}")
 	@CrossOrigin(origins = "*")
 	@Transactional
 	public ResponseEntity put(@RequestBody PlanetDTO PlanetDTO, @PathVariable int id) {
@@ -79,7 +79,7 @@ public class PlanetController {
 		}
 	}
 	//delete
-	@DeleteMapping("{id}")
+	@DeleteMapping("/{id}")
 	@CrossOrigin(origins = "*")
 	@Transactional
 	public ResponseEntity delete(@PathVariable int id) {

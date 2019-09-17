@@ -13,7 +13,7 @@ public class StarDTO {
 	
 	private int density;
 	
-	private List<Planet> planets = new ArrayList();
+	//private List<Planet> planets = new ArrayList();
 
 	public int getId() {
 		return id;
@@ -39,14 +39,14 @@ public class StarDTO {
 		this.density = density;
 	}
 
-	public List<Planet> getPlanets() {
+	/*public List<Planet> getPlanets() {
 		return planets;
 	}
 
 	public void setPlanets(List<Planet> planets) {
 		this.planets = planets;
-	}
-	
+	}*/
+
 	
 	
 }

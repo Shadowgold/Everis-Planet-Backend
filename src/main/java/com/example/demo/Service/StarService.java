@@ -28,12 +28,14 @@ public class StarService {
 	public StarDTO findById(int id) throws Exception {
 		
 		Optional<Star> starOptional = starRepository.findById(id);
+		StarDTO starDTO = new StarDTO();
 		try {
 			Star star = starOptional.get();
 			ModelMapper modelMapper = new ModelMapper();
-			return (StarDTO) modelMapper.map(star, StarDTO.class);
+			starDTO = (StarDTO) modelMapper.map(star, StarDTO.class);
+			return starDTO;
 		} catch (Exception e) {
-			throw new Exception();
+			return starDTO;
 		}
 		
 	}
@@ -82,6 +84,7 @@ public class StarService {
 		try {
 			Star star = starOptional.get();
 			star = modelMapper.map(starDTO, Star.class);
+			star.setId(id);
 			starRepository.save(star);
 			starDTO = modelMapper.map(star, StarDTO.class);
 		} catch (Exception e) {

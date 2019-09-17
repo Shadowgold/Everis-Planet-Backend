@@ -69,6 +69,7 @@ public class PlanetService {
 		try {
 			Planet planet = planetOptional.get();
 			planet = modelMapper.map(planetDTO, Planet.class);
+			planet.setId(id);
 			planetRepository.save(planet);
 			return (PlanetDTO) modelMapper.map(planet, PlanetDTO.class);
 			

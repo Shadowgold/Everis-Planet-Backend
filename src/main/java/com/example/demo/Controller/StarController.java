@@ -67,19 +67,20 @@ public class StarController {
 		}
 	}
 	//put
-	@PutMapping("{id}")
+	@PutMapping("/{id}")
 	@CrossOrigin(origins = "*")
-	@Transactional
+	//@Transactional
 	public ResponseEntity put(@RequestBody StarDTO starDTO, @PathVariable int id) {
 		
 		try {
 			return ResponseEntity.status(HttpStatus.CREATED).body(starService.update(starDTO, id));
 		} catch (Exception e) {
+			System.out.println(e.getMessage());
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"message\": \"Error. Verificar el ID y el BODY request y volver a intentar\"}");
 		}
 	}
 	//delete
-	@DeleteMapping("{id}")
+	@DeleteMapping("/{id}")
 	@CrossOrigin(origins = "*")
 	@Transactional
 	public ResponseEntity delete(@PathVariable int id) {
