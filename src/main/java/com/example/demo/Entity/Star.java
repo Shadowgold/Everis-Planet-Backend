@@ -31,7 +31,7 @@ public class Star extends EntityBean{
 	
 	@OneToMany(mappedBy = "star")
 	//@JsonManagedReference
-	@JsonIgnore
+	//@JsonIgnore
 	private List<Planet> planets = new ArrayList();
 
 	

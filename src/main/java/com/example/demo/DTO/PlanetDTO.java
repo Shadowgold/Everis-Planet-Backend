@@ -10,7 +10,7 @@ public class PlanetDTO {
 	
 	private int size;
 	
-	private Star star;
+	private StarDTO star;
 
 	public int getId() {
 		return id;
@@ -36,11 +36,11 @@ public class PlanetDTO {
 		this.size = size;
 	}
 
-	public Star getStar() {
+	public StarDTO getStar() {
 		return star;
 	}
 
-	public void setStar(Star star) {
+	public void setStar(StarDTO star) {
 		this.star = star;
 	}
 

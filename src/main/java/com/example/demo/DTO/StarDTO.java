@@ -13,7 +13,7 @@ public class StarDTO {
 	
 	private int density;
 	
-	//private List<Planet> planets = new ArrayList();
+	//private List<PlanetDTO> planets = new ArrayList();
 
 	public int getId() {
 		return id;
