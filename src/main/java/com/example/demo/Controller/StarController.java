@@ -69,7 +69,7 @@ public class StarController {
 	//put
 	@PutMapping("/{id}")
 	@CrossOrigin(origins = "*")
-	//@Transactional
+	@Transactional
 	public ResponseEntity put(@RequestBody StarDTO starDTO, @PathVariable int id) {
 		
 		try {
