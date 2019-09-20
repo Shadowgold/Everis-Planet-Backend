@@ -29,7 +29,7 @@ public class Star extends EntityBean{
 	@Column(name = "star_density")
 	private int density;
 	
-	@OneToMany(mappedBy = "star")
+	@OneToMany(mappedBy = "star",orphanRemoval=true)
 	//@JsonManagedReference
 	//@JsonIgnore
 	private List<Planet> planets = new ArrayList();
